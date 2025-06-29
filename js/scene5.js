@@ -234,8 +234,9 @@ function startSceneB() {
         misses++;
         updateStats();
         if (misses >= 3) {
-          alert("Too many misses! Restarting...");
-          startSceneB();
+        alert("Too many misses! Returning to Particle Garden.");
+        startSceneA();        // switch to Scene A
+        return;
         }
       }
   }, 1500);
