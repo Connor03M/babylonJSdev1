@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Scene 4 - Game Mode Selector</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+    }
+
+    #renderCanvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    #scene4-ui {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 10px 20px;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+      z-index: 10;
+    }
+
+    #scene4-ui a {
+      color: #00ffff;
+      background: transparent;
+      text-decoration: none;
+      border: 1px solid #00ffff;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    #mode-select {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      z-index: 11;
+    }
+
+    .mode-btn {
+      font-size: 18px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background: #00ffff;
+      color: black;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .mode-btn:hover {
+      background: #00cccc;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+
+  <canvas id="renderCanvas"></canvas>
+
+  <div id="scene4-ui">
+    <div><strong>Scene 4:</strong> Game Mode Selector</div>
+    <div><a href="index.html">Home</a></div>
+  </div>
+
+  <div id="mode-select">
+    <button class="mode-btn" onclick="startPlatformer()">Play Platformer</button>
+    <button class="mode-btn" onclick="startSurvival()">Play Survival</button>
+  </div>
+
+  <script src="https://cdn.babylonjs.com/babylon.js"></script>
+  <script src="https://cdn.babylonjs.com/cannon.js"></script>
+  <script src="https://cdn.babylonjs.com/gui/babylon.gui.min.js"></script>
+  <script src="js/scene4.js"></script>
+
+  <audio id="bg-music" loop style="display: none;">
+  <source src="/js/assets/music.mp3" type="audio" />
+</audio>
+
+</body>
+</html>
